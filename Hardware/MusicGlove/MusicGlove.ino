@@ -6,12 +6,21 @@
 #define TOUCH_SENSOR_3    12
 #define TOUCH_SENSOR_4    13
 
-const char* ssid = "Etisalat-HjHC";
-const char* password = "missarahmed@246";
+// const char* ssid = "Etisalat-HjHC";
+const char* ssid = "Mi Note 10 Lite";
+//const char* ssid = "STUDBME2";
+
+//const char* password = "missarahmed@246";
+const char* password = "misara246";
+//const char* password = "BME2Stud";
+
 // IP address of the server
-const char* serverAddress = "192.168.1.4";
+//const char* serverAddress = "192.168.224.178";
+//const char* serverAddress = "192.168.1.4";
+const char* serverAddress = "192.162.224.236";
+
 // Port of the server
-const int serverPort = 12345;
+const int serverPort = 123;
 
 WiFiUDP udp;
 
@@ -66,7 +75,8 @@ void loop()
 
     // Send data using UDP
     udp.beginPacket(serverAddress, serverPort);
-    udp.print("First");
+    Serial.println("First");
+    udp.print("1");
     udp.endPacket();
   }
   else if ( (!btnState1) && prevState1)
@@ -83,7 +93,8 @@ void loop()
 
     // Send data using UDP
     udp.beginPacket(serverAddress, serverPort);
-    udp.print("Second");
+    Serial.println("Second");
+    udp.print("2");
     udp.endPacket();
   }
   else if ( (!btnState2) && prevState2)
@@ -99,7 +110,8 @@ void loop()
 
     // Send data using UDP
     udp.beginPacket(serverAddress, serverPort);
-    udp.print("Third");
+    Serial.println("Third");
+    udp.print("3");
     udp.endPacket();
   }
   else if ( (!btnState3) && prevState3)
@@ -115,7 +127,8 @@ void loop()
 
     // Send data using UDP 
     udp.beginPacket(serverAddress, serverPort);
-    udp.print("Fourth");
+    Serial.println("Fourth");
+    udp.print("4");
     udp.endPacket();
   }
   else if ( (!btnState4) && prevState4)
